@@ -6,12 +6,12 @@
 #    By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/16 03:32:20 by fadwa             #+#    #+#              #
-#    Updated: 2022/07/16 04:16:33 by fadwa            ###   ########.fr        #
+#    Updated: 2022/07/16 04:40:14 by fadwa            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC				=	getnext_line/get_next_line_utils.c getnext_line/get_next_line.c \
-	philo.c
+	philo.c utils.c
 OBJ				=	$(addprefix obj/, ${SRC:.c=.o})
 
 
