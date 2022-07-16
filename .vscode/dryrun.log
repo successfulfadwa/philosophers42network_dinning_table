@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/fadwa/Desktop/philosophers42network_dinning_table'
+make: Leaving directory '/home/fadwa/Desktop/philosophers42network_dinning_table'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
