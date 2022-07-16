@@ -6,44 +6,34 @@
 #    By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/16 03:32:20 by fadwa             #+#    #+#              #
-#    Updated: 2022/07/16 04:44:15 by fadwa            ###   ########.fr        #
+#    Updated: 2022/07/16 05:03:38 by fadwa            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC				=	getnext_line/get_next_line_utils.c getnext_line/get_next_line.c \
-	philo.c utils.c
-OBJ				=	$(addprefix obj/, ${SRC:.c=.o})
+NAME =		philo
+CC =		gcc
+FLAGS =		-Wall -Werror -Wextra -pthread -g
+RM =		rm -rf
 
+SRC =		philo.c \
+			utils.c
 
-CC				=	cc
+OBJECTS =	$(SRC:.c=.o)
 
-CFLAGS 			=	-Wall -Werror -Wextra -g
+.c.o:
+			$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
 
-RM 				=	rm -f
+all:		$(NAME)
 
-LIBS			=	philo.h
+$(NAME):	$(OBJECTS) philo.h
+			$(CC) $(FLAGS) $(OBJECTS) -o $(NAME)
 
-NAME			=	philo
+clean:
+			$(RM) $(OBJECTS)
 
-LIBRARY = libft/libft.a
+fclean:		clean
+			$(RM) $(NAME)
 
+re:			fclean all
 
-all:	$(NAME)
-
-$(NAME) :$(LIBRARY)	$(OBJ) $(LIBS)
-	$(CC) $(CFLAGS) $(LIBRARY) $(OBJ) -g -o $(NAME)
-
-
-$(LIBRARY) :
-	make -C libft
-
-obj/%.o: %.c
-	@ mkdir -p obj/getnext_line
-	$(CC)  -c $< -o $@
-
-
-fclean:
-	make fclean -C libft
-	$(RM) $(OBJ) $(NAME)
-
-re:			fclean $(OBJ) $(NAME)
+.PHONY:		all clean fclean re
