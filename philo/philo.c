@@ -6,7 +6,7 @@
 /*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 03:26:30 by fadwa             #+#    #+#             */
-/*   Updated: 2022/07/16 06:01:16 by fadwa            ###   ########.fr       */
+/*   Updated: 2022/07/16 06:20:26 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void init_setup(t_setup *setup,int argc ,char **argv)
 	setup->time_to_eat =ft_atoi(argv[3]);
 	setup->time_to_sleep =ft_atoi(argv[4]);
 	setup->time_to_eat =0;
-	if (argc>5)
+	if (argc>5) k
 		setup->times_to_eat =0;
 
 }
