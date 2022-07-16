@@ -4,6 +4,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <pthread.h>
+# include <sys/time.h>
 # include "libft/libft.h"
 # include "getnext_line/get_next_line.h"
 
