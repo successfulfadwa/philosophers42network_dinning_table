@@ -6,12 +6,12 @@
 /*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 03:52:01 by faljaoui          #+#    #+#             */
-/*   Updated: 2022/07/15 10:22:55 by fadwa            ###   ########.fr       */
+/*   Updated: 2022/07/16 04:44:36 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include "../so_long.h"
+#include "../philo.h"
 
 char	*ft_strjoinn(char *s1, char *s2)
 {

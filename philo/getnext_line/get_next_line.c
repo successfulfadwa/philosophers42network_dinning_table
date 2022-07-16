@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 03:51:29 by faljaoui          #+#    #+#             */
-/*   Updated: 2022/06/19 01:43:57 by faljaoui         ###   ########.fr       */
+/*   Updated: 2022/07/16 04:44:57 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include "../push_swap.h"
+#include "../philo.h"
 
 int	ft_is_nwlin(const char *s)
 {

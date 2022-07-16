@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_unsignedint.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: faljaoui <faljaoui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 17:06:38 by faljaoui          #+#    #+#             */
-/*   Updated: 2022/06/02 11:32:33 by faljaoui         ###   ########.fr       */
+/*   Updated: 2022/07/16 04:45:52 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ unsigned int	ft_nb_len1(unsigned int n)
 	if (n == 0)
 		return (1);
 	len = 0;
-	if (n < 0)
-		len++;
+	
 	while (n)
 	{
 		n = n / 10;
