@@ -6,7 +6,7 @@
 /*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 03:26:30 by fadwa             #+#    #+#             */
-/*   Updated: 2022/07/17 02:16:47 by fadwa            ###   ########.fr       */
+/*   Updated: 2022/07/17 02:25:27 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ void init_setup(t_setup *setup,int argc ,char **argv)
 	setup->time_to_eat =0;
 	if (argc>5)
 		setup->times_to_eat =0;
+	setup->is_died=0;
+	setup->meals=0;
+
 
 }
 void	validation(int argc, char *argv[])
