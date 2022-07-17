@@ -11,6 +11,17 @@
 
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
+typedef struct s_setup
+{
+	int 			n_philos;
+	int 			time_to_die;
+	int				time_to_eat;
+	int				time_to_sleep;
+	int				times_to_eat;
+	int				is_died;
+	long			start_time;
+	pthread_mutex_t	*forks;
+}	t_setup;
 
 typedef struct s_philo
 {
@@ -19,16 +30,15 @@ typedef struct s_philo
 	long 	last_meal;
 	int	 	left_fork;
 	int		right_fork;
+	t_setup *setup_philo;
+	//setup for every philosophers
 
 }	t_philo;
 
-typedef struct s_setup
-{
-	int n_philos;
-	int time_to_die;
-	int	time_to_eat;
-	int	time_to_sleep;
-	int	times_to_eat;
-}	t_setup;
+void	validation(int argc, char *argv[]);
+void	init_setup(t_setup *setup,int argc ,char **argv);
+int		ft_isdigit(int i);
+long	ft_atol(const char *str);
+int		ft_atoi(const char *str);
 
 #endif

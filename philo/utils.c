@@ -6,7 +6,7 @@
 /*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 04:38:57 by fadwa             #+#    #+#             */
-/*   Updated: 2022/07/16 04:43:30 by fadwa            ###   ########.fr       */
+/*   Updated: 2022/07/17 02:11:51 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int	ft_atoi(const char *str)
 	sign = is_negative(str);
 	if (!str)
 		return (0);
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || str[i] == '\v'
-		|| str[i] == '\f' || str[i] == '\r')
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
@@ -60,4 +60,26 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (nbr * sign);
+}
+
+long	ft_atol(const char *str)
+{
+	long	value;
+	long	i;
+	long	sign;
+
+	value = 0;
+	i = 0;
+	sign = (is_negative(str));
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\v' || str[i] == '\r' || str[i] == '\f')
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (ft_isdigit(str[i]))
+	{
+		value = (value * 10) + (str[i] - '0');
+		i++;
+	}
+	return (value * sign);
 }
