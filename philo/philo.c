@@ -6,7 +6,7 @@
 /*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 03:26:30 by fadwa             #+#    #+#             */
-/*   Updated: 2022/07/18 04:57:31 by fadwa            ###   ########.fr       */
+/*   Updated: 2022/07/18 05:21:33 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 t_philo *init_philo(t_setup *setup)
 {
-	int i;
+	int		i;
 	t_philo *philo;
+	
 	i = 0;
-	philo = malloc (sizeof(t_philo)*setup-> n_philos);
-	while (i<setup->n_philos)
+	philo = malloc (sizeof(t_philo) * setup-> n_philos);
+	while (i < setup->n_philos)
 	{
 	philo[i].philo_id=i+1;
 	philo[i].last_meal=get_time();
@@ -84,7 +85,7 @@ void	validation(int argc, char *argv[])
 int main(int argc , char *argv[])
 {
 	t_setup setup;
-	t_philo *philo
+	t_philo *philo;
 	if (argc <5 || argc >6)
 	{
 		printf("Invalid syntax!\n");
@@ -95,5 +96,6 @@ int main(int argc , char *argv[])
 	validation(argc,argv);
 	init_setup(&setup,argc,argv);
 	philo = init_philo(&setup);
-
+	printf("%ld",philo->last_meal);
+	return(0);
 }

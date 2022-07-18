@@ -6,7 +6,7 @@
 #    By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/16 03:32:20 by fadwa             #+#    #+#              #
-#    Updated: 2022/07/18 04:47:37 by fadwa            ###   ########.fr        #
+#    Updated: 2022/07/18 05:20:14 by fadwa            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ RM =		rm -rf
 
 SRC =		philo.c \
 			utils.c \
-			dinner_utils\
+			dinner_utils.c\
 
 OBJECTS =	$(SRC:.c=.o)
 
