@@ -6,7 +6,7 @@
 /*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 03:26:30 by fadwa             #+#    #+#             */
-/*   Updated: 2022/07/18 04:49:06 by fadwa            ###   ########.fr       */
+/*   Updated: 2022/07/18 04:57:31 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ t_philo *init_philo(t_setup *setup)
 	{
 	philo[i].philo_id=i+1;
 	philo[i].last_meal=get_time();
-	philo[i].n_meals=n;
+	philo[i].n_meals=0;
 	philo[i].left_fork=i;
 	philo[i].right_fork=i+1;
-	philo[i].setub_philo=&setup;
+	philo[i].setup_philo=setup;
 	pthread_mutex_init(&setup->forks[i],NULL);
 	i++;
 	}

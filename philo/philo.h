@@ -13,18 +13,21 @@
 # define MIN_INT -2147483648
 typedef struct s_setup
 {
-	int 			n_philos;
-	int 			time_to_die;
-	int				time_to_eat;
-	int				time_to_sleep;
-	int				times_to_eat;
-	int				is_died;
-	long			start_time;
+	int				meals;
 	pthread_mutex_t	*forks;
+	int				is_died;
+	int				n_philos;
+	long			start_time;
+	int				time_to_die;
+	int				time_to_eat;
+	int				times_to_eat;
+	pthread_mutex_t	print_locker;
+	int				time_to_sleep;
 }	t_setup;
 
 typedef struct s_philo
 {
+	pthread_t	thread;
 	int		philo_id;
 	int		n_meals;
 	long 	last_meal;
