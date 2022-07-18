@@ -33,7 +33,7 @@ typedef struct s_philo
 	long 	last_meal;
 	int	 	left_fork;
 	int		right_fork;
-	t_setup *setup_philo;
+	t_setup *setup_philo;//setub_own_philo
 	//setup for every philosophers
 
 }	t_philo;

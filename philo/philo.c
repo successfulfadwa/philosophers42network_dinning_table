@@ -6,7 +6,7 @@
 /*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 03:26:30 by fadwa             #+#    #+#             */
-/*   Updated: 2022/07/18 05:21:33 by fadwa            ###   ########.fr       */
+/*   Updated: 2022/07/18 05:31:28 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ int main(int argc , char *argv[])
 	validation(argc,argv);
 	init_setup(&setup,argc,argv);
 	philo = init_philo(&setup);
-	printf("%ld",philo->last_meal);
+	start_dinner(philo,&setup);
+	//printf("%ld",philo->last_meal);
 	return(0);
 }
