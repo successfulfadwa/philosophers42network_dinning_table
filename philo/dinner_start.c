@@ -6,7 +6,7 @@
 /*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 05:32:17 by fadwa             #+#    #+#             */
-/*   Updated: 2022/07/18 07:39:53 by fadwa            ###   ########.fr       */
+/*   Updated: 2022/07/18 07:41:36 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	start_dinner(t_philo *philo)
 	int i;
 	i=0;
 	philo->setup_philo->start_time=get_time();
-	//start timefor every philo 1by1;
+	//start timefor every philo 1by1; 
 	while(i<philo->setup_philo->n_philos)
 	{
 		pthread_create(&philo[i].thread,NULL,&routine,&philo[i]);
