@@ -37,6 +37,8 @@ typedef struct s_philo
 
 void	validation(int argc, char *argv[]);
 void	init_setup(t_setup *setup,int argc ,char **argv);
+long	get_time(void);
+
 int		ft_isdigit(int i);
 long	ft_atol(const char *str);
 int		ft_atoi(const char *str);

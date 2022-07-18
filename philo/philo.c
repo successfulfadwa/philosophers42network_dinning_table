@@ -6,11 +6,38 @@
 /*   By: fadwa <fadwa@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 03:26:30 by fadwa             #+#    #+#             */
-/*   Updated: 2022/07/17 02:34:12 by fadwa            ###   ########.fr       */
+/*   Updated: 2022/07/18 04:49:06 by fadwa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+t_philo *init_philo(t_setup *setup)
+{
+	int i;
+	t_philo *philo;
+	i = 0;
+	philo = malloc (sizeof(t_philo)*setup-> n_philos);
+	while (i<setup->n_philos)
+	{
+	philo[i].philo_id=i+1;
+	philo[i].last_meal=get_time();
+	philo[i].n_meals=n;
+	philo[i].left_fork=i;
+	philo[i].right_fork=i+1;
+	philo[i].setub_philo=&setup;
+	pthread_mutex_init(&setup->forks[i],NULL);
+	i++;
+	}
+	//second round l philosophers reset rightfork to 0 sophilo number 1 could take fork 1 
+	//in case shi philos on of them stop at midlle we should reset  forsecround.
+	i--;
+	philo[i].right_fork =0;
+	return(philo);
+
+
+}
+
 void init_setup(t_setup *setup,int argc ,char **argv)
 {
 	setup->n_philos = ft_atoi(argv[1]);
@@ -22,7 +49,7 @@ void init_setup(t_setup *setup,int argc ,char **argv)
 		setup->times_to_eat =0;
 	setup->is_died=0;
 	setup->meals=0;
-	setub->forks =malloc(sizeof(pthread_mutex_t)* setup->n_philos);
+	setup->forks =malloc(sizeof(pthread_mutex_t)* setup->n_philos);
 	//allocate mutex size *philos nb  to be used by forks
 	//cuz they if not they will all share same data and causesome data rces
 
@@ -57,6 +84,7 @@ void	validation(int argc, char *argv[])
 int main(int argc , char *argv[])
 {
 	t_setup setup;
+	t_philo *philo
 	if (argc <5 || argc >6)
 	{
 		printf("Invalid syntax!\n");
@@ -66,4 +94,6 @@ int main(int argc , char *argv[])
 	printf("hey");
 	validation(argc,argv);
 	init_setup(&setup,argc,argv);
+	philo = init_philo(&setup);
+
 }
